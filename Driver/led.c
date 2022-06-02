@@ -3,7 +3,7 @@
 #include "led.h"
 
 // 当前板载LED的硬件接线逻辑，编码过程屏蔽接线逻辑
-LedHWPin ledHardware[LED_MAX_NUM] = {
+const LedHWPin ledHardware[LED_MAX_NUM] = {
     {LED_0, GPIO_Pin_5, GPIOB, RCC_APB2Periph_GPIOB},
     {LED_1, GPIO_Pin_5, GPIOE, RCC_APB2Periph_GPIOE},
 };
@@ -15,6 +15,11 @@ LedHWPin ledHardware[LED_MAX_NUM] = {
 **/
 void getLedPinByNum(LedNum num, LedHWPin* ledHwPin)
 {
+    // 越界保护
+    if (num >= LED_MAX_NUM || sizeof(ledHardware) / sizeof(LedHWPin) > LED_MAX_NUM) {
+        return;
+    }
+
     for (int i = 0; i < LED_MAX_NUM; i++) {
         if (num == ledHardware[i].num) {
             ledHwPin->num = num;

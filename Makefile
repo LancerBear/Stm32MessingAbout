@@ -1,5 +1,5 @@
 # 生成的文件名<项目名>
-PROJECT = demo
+PROJECT = Stm32MessingAbout
 
 # 定义文件格式和文件名
 TARGET := $(PROJECT)
