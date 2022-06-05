@@ -26,6 +26,7 @@ void getLedPinByNum(LedNum num, LedHWPin* ledHwPin)
             ledHwPin->pin = ledHardware[i].pin;
             ledHwPin->gpioTypeDef = ledHardware[i].gpioTypeDef;
             ledHwPin->rccGpiox = ledHardware[i].rccGpiox;
+            break;
         }
     }
 }
