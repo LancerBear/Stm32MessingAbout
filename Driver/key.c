@@ -59,7 +59,7 @@ void regKeyUpCallBack(KeyNum num, KeyCallBackFunc func)
     if (num >= KEY_MAX_NUM) {
         return;
     }
-    
+
     if (isKeyInit[num] == 0) {
         initKey(num);
     }

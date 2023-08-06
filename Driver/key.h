@@ -20,6 +20,6 @@ typedef struct _KeyHWPin
 typedef void (*KeyCallBackFunc)(void);
 
 void regKeyDownCallBack(KeyNum num, void (*callBack)(void));
-void regKeyUpCallBack(KeyNum num, void (*callBack)(void));  
+void regKeyUpCallBack(KeyNum num, void (*callBack)(void));
 
 #endif
